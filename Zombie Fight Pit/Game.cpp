@@ -15,8 +15,7 @@ bool checkCollision(T1* obj1, T2* obj2) {
 }
 
 Game::Game() : window(sf::VideoMode(1200, 800), "Zombie Fight Pit"), score(0), highScore(0),
-	arena(sf::Vector2f(600.0f, 600.0f)), zombieHp(3), zombieSpawnInterval(5000), round(1),
-	zombieCount(5)
+	arena(sf::Vector2f(600.0f, 600.0f))
 {
 	arena.setPosition(300.0f, 100.0f);
 	arena.setFillColor(sf::Color::Black);
@@ -39,6 +38,10 @@ void Game::run()
 	while (window.isOpen()) {
 		player = new Player();
 		player->setPosition(600.0f, 400.0f);
+		zombieHp = 3;
+		zombieSpawnInterval = 5000;
+		round = 1;
+		zombieCount = 5;
 		highScoreText = sf::Text("High Score: " + std::to_string(highScore), font, 50);
 		highScoreText.setPosition(480.0f, 20.0f);
 		while (window.isOpen() && !player->isDead()) {
