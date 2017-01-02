@@ -161,7 +161,7 @@ void Game::render()
 
 void Game::advanceRound() {
 	++round;
-	zombieHp += 2;
+	zombieHp += 1;
 	zombieCount = round * 5;
 	if (round < 9) {
 		zombieSpawnInterval -= 500;
